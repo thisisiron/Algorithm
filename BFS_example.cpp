@@ -4,7 +4,7 @@ using namespace std;
 
 int visit[30];
 deque<int> queue;
-
+	
 void BFS(int Map[][30],int N, int v) {
 	
 	visit[v] = 1;
@@ -16,13 +16,13 @@ void BFS(int Map[][30],int N, int v) {
 		v = queue.front();
 		queue.pop_front();
 		
-		for(int i=0; i<N ;i++){
-			if(Map[v][i] == 1 && !visit[i]){
+		for(int i=0; i<N ;i++) {
+			if(Map[v][i] == 1 && !visit[i]) {
 				visit[i] = 1;
 				printf("%d에서 %d로 이동\n", v, i);
 				queue.push_back(i);
 			}
-		}		
+		}
 		
 	}
 	
