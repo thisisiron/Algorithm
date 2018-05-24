@@ -14,7 +14,7 @@ print(solution(5,3))
 
 
 # 모범 답안
-
+# range와 sum만 이용해서 해결하였다.
 # def adder(a, b):
 #     if a > b: a, b = b, a
 #     return sum(range(a,b+1))
