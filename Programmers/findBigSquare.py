@@ -28,3 +28,19 @@ print(solution([[1, 1, 1, 0], [1, 1, 1, 0], [1, 1, 1, 1], [0, 0, 1, 1]]))
 # 1 2 2 0
 # 1 2 3 1    기존의 방법을 사용하면 4,4가 4가 되버린다.
 # 0 0 1 4    원래는 1이 되어야 하는데 이것을 해결하기 위해 min을 사용하였다.
+
+
+# 모범 답안
+# def findLargestSquare(board):
+#     answer = 1
+#     res = [[1 if x=='O' else 0 for x in y] for y in board]
+#     for y in range(len(board)):
+#         for x in range(len(board[y])):
+#             if board[y][x] == 'O':
+#                 res[y][x] = min(res[y-1][x], res[y-1][x-1], res[y][x-1]) + 1
+#                 if res[y][x] > answer: answer = res[y][x]
+
+#     return answer ** 2
+
+# 이 풀이가 좋았던 것은 for문 2개로만 다 해결하였다.
+# 마지막에 있는 if문을 이용해서 한 번에 처리하였다.
