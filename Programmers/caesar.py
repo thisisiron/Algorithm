@@ -43,3 +43,9 @@ def caesar(s, n):
 print(caesar('AB', 1))
 print(caesar('z', 1))
 print(caesar('a B z', 4))
+
+# 배운점
+# string 모듈을 사용해서 string.ascii_lowercase, string.ascii_uppercase을 이용하였다.
+# 해당 character가 대문자인지 소문자인지 파악하고 소문자일 경우 그 소문자를 넣어놓고
+# a = base.index(c) + n을 통해서 n번 이후의 알파벳 인덱스를 알아냈다.
+# z에서 a로 돌아가기 위해 %를 사용.
