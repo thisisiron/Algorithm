@@ -23,3 +23,14 @@ print(x_list)
 # 7 선택
 # [1, 2, 3, 5, 7, 8]
 # [1, 2, 3, 5, 7, 8]
+print('--------------------------------')
+
+def insertion_sort(items):
+    for i in range(len(items)):
+        j = i
+        while j > 0 and items[j - 1] > items[i]:
+            items[j-1], items[i] = items[i], items[j-1]
+            j-=1
+    return items
+
+print(insertion_sort(x_list))
