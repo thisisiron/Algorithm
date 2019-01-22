@@ -2,3 +2,4 @@
 
 # no .exe files
 *.exe
+*.out
