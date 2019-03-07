@@ -1,19 +1,23 @@
 #include <cstdio>
 
 int N;
-int count;
+int D[1000001];
+
+int min(int a, int b) {
+	return a>b?b:a;
+}
 
 int main() {
 	
 	scanf("%d", &N);
-	
-	while(N>1){
-		if(N%3==1) N = N - 1;
-		else if(N%3==0) N = N/3;
-		else if(N%2==0) N = N/2;s
-		count++;
+	// D는 i까지 가는데 최소한의 수 
+	for(int i=2;i<=N;i++){
+		D[i] = D[i-1] + 1;
+		if(i%3==0) D[i] = min(D[i], D[i/3] + 1);
+		if(i%2==0) D[i] = min(D[i], D[i/2] + 1);
 	}
-	printf("%d", count);	
+	
+	printf("%d", D[N]);
 	
 	return 0;
 }
