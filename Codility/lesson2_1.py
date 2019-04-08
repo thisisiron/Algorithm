@@ -1,4 +1,4 @@
-# This solution's point is 87%
+# This solution's point is 100%
 def solution(A, K):
     if K==0: return A
     
