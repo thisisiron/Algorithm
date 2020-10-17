@@ -1,18 +1,14 @@
 import sys 
 input = sys.stdin.readline
 
+
 N = int(input())
 
-primes = []
-check = [False] * (N + 1) 
-for i in range(2, N + 1):
-    if check[i] == False:
-        for j in range(i * 2, N + 1, i):
-            check[j] = True
-
-for i in range(2, N + 1):
-    if not check[i]:
-        primes.append(i)
+check = [False, False] + [True] * (N-1)
+for i in range(2, int(N**0.5 + 1.5)):
+    if check[i]:
+        check[2 * i::i] = [False] * ((N - i) // i)
+primes = [x for x in range(N+1) if check[x]]
 
 start = 0
 end = 0
