@@ -10,10 +10,12 @@ end = 0
 result = 0 
 cnt = 0
 
-while end != len(x_list):
+while True:
     if M <= result:
         result -= x_list[start]
         start += 1
+    elif end == len(x_list):
+        break
     else:
         result += x_list[end]
         end += 1
