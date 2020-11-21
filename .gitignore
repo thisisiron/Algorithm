@@ -1,6 +1,8 @@
 /.vscode
 /test
+/tmp
 
 # no .exe files
 *.exe
 *.out
+*.txt
