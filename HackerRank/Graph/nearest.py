@@ -23,4 +23,24 @@ def findShortest(graph_nodes, graph_from, graph_to, ids, val):
         for j in range(i + 1, len(color2node[val])):
             if mn > graph[color2node[val][i]][color2node[val][j]]:
                 mn = graph[color2node[val][i]][color2node[val][j]]
-    return mn if mn != inf else -
+    return mn if mn != inf else -1
+
+
+if __name__ == '__main__':
+    with open('test.txt', 'r') as file:
+        lines = file.readlines()
+
+    graph_nodes, graph_edges = map(int, lines[0].split())
+
+    graph_from = [0] * graph_edges
+    graph_to = [0] * graph_edges
+
+    for i in range(graph_edges):
+        graph_from[i], graph_to[i] = map(int, lines[i + 1].split())
+
+    ids = list(map(int, lines[i + 2].rstrip().split()))
+
+    val = int(lines[i + 3])
+
+    ans = findShortest(graph_nodes, graph_from, graph_to, ids, val)
+    print(ans)
