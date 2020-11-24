@@ -13,7 +13,7 @@ for _ in range(N):
     X.append(data[:F])
     Y.append(data[F])
     
-poly = PolynomialFeatures(3)
+poly = PolynomialFeatures(3, include_bias=False)
 model = linear_model.LinearRegression()
 model.fit(poly.fit_transform(np.array(X)), Y)
 
