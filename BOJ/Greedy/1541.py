@@ -5,7 +5,7 @@ input = sys.stdin.readline
 
 formula = input().rstrip()
 
-number_or_symbol = re.compile('(\d+|[^ 0-9])')
+number_or_symbol = re.compile(r'(\d+|[^ 0-9])')
 formula = re.findall(number_or_symbol, formula)
 
 new_formula = []
