@@ -21,8 +21,6 @@ dx = [0, 0, 1, -1]
 
 n = int(input())
 bamboos = [[int(t) for t in map(int, input().split())] for _ in range(n)]
-print(len(bamboos))
-print(len(bamboos[0]))
 dp = [[-1] * n for _ in range(n)] 
 max_val = 0
 
