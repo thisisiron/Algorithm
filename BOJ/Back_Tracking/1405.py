@@ -18,6 +18,7 @@ def dfs(y, x, cnt, prob, visited):
             dfs(ny, nx, cnt + 1, prob * p[i], visited)
         visited[(y, x)] = False 
 
+
 num, E, W, S, N = map(int, input().split())
 p = [E/100, W/100, S/100, N/100]
 dy = (0, 0, -1, 1)
