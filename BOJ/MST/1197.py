@@ -18,7 +18,7 @@ def union(x, y):
     if parent[x] < parent[y]:
         parent[x] = y
     else:
-        parent[y] = x
+        parent[y] = x 
 
 
 V, E = map(int, input().split())
