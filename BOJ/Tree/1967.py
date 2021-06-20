@@ -28,4 +28,4 @@ for i in range(n-1):
     x, y, w = map(int, input().split())
     graph[x-1].append([w, y-1])
     graph[y-1].append([w, x-1])
-print(bfs(bfs(6, 1), 0))
+print(bfs(bfs(0, 1), 0))
