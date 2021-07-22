@@ -32,7 +32,7 @@ for i in range(1, N + 1):
 
 for i in range(start_idx, -1, -1):
 	tree[i] = tree[i * 2] + tree[i * 2 + 1]
-
+print(tree)
 for _ in range(M + K):
 	a, b, c = map(int, input().split())
 	if a == 1:
