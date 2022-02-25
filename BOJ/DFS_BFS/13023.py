@@ -1,29 +1,36 @@
 import sys
+from xml.dom.pulldom import START_DOCUMENT
 input = sys.stdin.readline
 
 
-def dfs(u, i):
-    visited[u] = 1
+def dfs(cur, step):
+    if step == 4:
+        return True
+    else:
+        if cur in f:
+            for nxt in f[cur]:
+                if not visited[nxt]:
+                    visited[nxt] = 1
+                    flag = dfs(nxt, step + 1)
+                    if flag:
+                        return flag
+                    visited[nxt] = 0
 
-    for v in graph[u]:
-        if not visited[v]:
-            dfs(v, i)
-        elif visited[v] and v == i:
-            answer.append(v)
 
+N, M = map(int, input().split())
 
-N = int(input())
-arr = []
-graph = {}
-for a in range(1, N + 1):
-    b = int(input())
-    graph.setdefault(a, []).append(b)
+f = {}
+for _ in range(M):
+    a, b = map(int, input().split())
+    f.setdefault(a, []).append(b)
+    f.setdefault(b, []).append(a)
 
-answer = []
-for i in range(1, N + 1):
-    print('::', i)
-    visited = [0] * (N + 1)
-    dfs(i, i)
+visited = [0 for _ in range(N)]
 
-print(len(answer))
-print(*answer, sep='\n')
+for start in range(N):
+    visited[start] = 1
+    flag = dfs(start, 0)
+    visited[start] = 0
+    if flag:
+        break
+print(1 if flag else 0)
