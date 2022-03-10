@@ -20,20 +20,22 @@ def score():
     for i in range(len(l_team)):
         for j in range(i + 1, len(l_team)):
             l_power += (players[l_team[i]][l_team[j]] + players[l_team[j]][l_team[i]])
-            
+    print(s_power, l_power)
     if mn > abs(s_power - l_power):
         mn = abs(s_power - l_power)
     return
-    
+
 
 def dfs(idx):
     if idx == N:
         score()
     else:
-        visited[idx] = 1
-        dfs(idx + 1)
-        visited[idx] = 0
-        dfs(idx + 1)
+        for i in range(idx, N):
+            if visited[i]:
+                continue
+            visited[i] = 1
+            dfs(i + 1)
+            visited[i] = 0
 
 
 N = int(input())
